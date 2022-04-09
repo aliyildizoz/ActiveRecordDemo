@@ -60,7 +60,6 @@ namespace ActiveRecordDemo.ActiveRecords
             T t = null;
             var idInfo = GetColumnsWithValues(new T()).FirstOrDefault(t => t.Item1.ToLowerInvariant().Contains("id"));
             string tableName = typeof(T).Name;
-            List<string> setClouseList = new List<string>();
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
